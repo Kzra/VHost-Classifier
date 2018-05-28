@@ -7,10 +7,13 @@ The VHost-Classifier algorithm uses the virus-host DB , the NCBI taxonomy DB and
 !python vhost_classifier.py [TaxonID.tsv] [VirusHostDB.tsv] [Output Dir] [-i]
 ```
 
-[TaxonID.tsv] is a .tsv list of TaxonIDs (one Taxon ID per row) to be classified.<br/>
-[VHostDB.tsv] is a copy of the Virus Host DB which can be downloaded [here](http://www.genome.jp/virushostdb/).<br/>
-[Output Dir] is the name of the directory to output results to. <br/>
-[-i] optional argument, specify the value to start indexing the input TaxonIDs from (default 0). 
+```[TaxonID.tsv]```: a .tsv list of TaxonIDs to be classified (one Taxon ID per row).
+
+```[VHostDB.tsv]```: a copy of the Virus Host DB which can be downloaded [here](http://www.genome.jp/virushostdb/).
+
+```[Output Dir] ```: the name of the directory to output results to (must be unique). 
+
+```[-i]```: optional argument, specify the value to start indexing the input TaxonIDs from (default 0). 
 
 
 **Dependencies:**<br/>
