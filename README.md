@@ -4,7 +4,7 @@ The VHost-Classifier algorithm uses the Virus-Host DB , the NCBI Taxonomy DB and
 
 **Usage:**
 ```shell
-!python vhost_classifier.py [TaxonID.tsv] [VirusHostDB.tsv] [Output Dir] [-i]
+python vhost_classifier.py [TaxonID.tsv] [VirusHostDB.tsv] [Output Dir] [-i]
 ```
 
 ```[TaxonID.tsv]```: a .tsv list of taxonIDs to be classified (one taxon ID per row).
