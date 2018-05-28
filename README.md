@@ -13,7 +13,7 @@ The VHost-Classifier algorithm uses the Virus-Host DB , the NCBI Taxonomy DB and
 
 ```[Output Dir] ```: the name of the directory to output results to (must be unique). 
 
-```[-i]```: optional argument, specify the value to start indexing the input TaxonIDs from (default 0). 
+```[-i]```: optional argument, specify the value to start indexing the input taxonIDs from (default 0). 
 
 
 **Dependencies:**<br/>
