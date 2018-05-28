@@ -1,6 +1,6 @@
 # VHost-Classifier
 For a list of Taxon IDs, VHost-Classifier will filter out the viruses and then sort these viruses into groups based on their host lineage.
-The VHost-Classifier algorithm uses the virus-host DB , the NCBI taxonomy DB and in-built predictive rules to acheive a high rate of virus host classification. 
+The VHost-Classifier algorithm uses the Virus-Host DB , the NCBI Taxonomy DB and in-built predictive rules to acheive a high rate of virus host classification. VHost-Classifier will classify Virus Taxon IDs to family resolution. 
 
 **Usage:**
 ```shell
@@ -23,7 +23,7 @@ Note: On first run through NCBI taxonomy database will be downloaded by ETE3.
 
 **Output**:
 VHost Classifier will write create directories and write .csv files.<br/>
-**Reading the .csv files**: the first column is Taxon IDs, the second column is the index position (indexed from -i) of this taxon id in the input file and the final row is the host name, predicted host name, or virus name (if host name can't be predicted). In each directory a counts file is also written which contains the counts of how many Taxon IDs are in each class. 
+**Reading the .csv files**: the first column contains Taxon IDs, the second column the index position (indexed from -i) of the taxon id in the input file and the final column is the host name, predicted host name, or if host name can't be predicted,the virus name. In each directory a counts.csv file is also written which contains the counts of how many Taxon IDs are in each taxonomic class. 
 
 **Reference:**
 Virus Host DB:
