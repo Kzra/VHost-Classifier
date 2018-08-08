@@ -1,0 +1,227 @@
+Olpidiomycota
+Coprothermobacterota
+Abditibacteriota
+Candidatus Aureabacteria
+Candidatus Abyssubacteria
+candidate division FCPU426
+candidate division AD3
+Candidatus Goldbacteria
+Candidatus Marsarchaeota
+Balneolaeota
+Candidatus Heimdallarchaeota
+Candidatus Odinarchaeota
+Calditrichaeota
+Candidatus Verstraetearchaeota
+Zoopagomycota
+Mucoromycota
+Candidatus Kryptonia
+Rhodothermaeota
+Candidatus Desantisbacteria
+Candidatus Wirthbacteria
+Candidatus Zambryskibacteria
+Candidatus Yonathbacteria
+Candidatus Wildermuthbacteria
+Candidatus Vogelbacteria
+Candidatus Veblenbacteria
+Candidatus Terrybacteria
+Candidatus Taylorbacteria
+Candidatus Tagabacteria
+Candidatus Sungbacteria
+Candidatus Staskawiczbacteria
+Candidatus Spechtbacteria
+Candidatus Ryanbacteria
+Candidatus Portnoybacteria
+Candidatus Niyogibacteria
+Candidatus Nealsonbacteria
+Candidatus Lloydbacteria
+Candidatus Liptonbacteria
+Candidatus Komeilibacteria
+Candidatus Kerfeldbacteria
+Candidatus Jacksonbacteria
+Candidatus Harrisonbacteria
+Candidatus Colwellbacteria
+Candidatus Buchananbacteria
+Candidatus Brennerbacteria
+Candidatus Andersenbacteria
+Candidatus Chisholmbacteria
+Candidatus Woykebacteria
+Candidatus Blackburnbacteria
+Candidatus Wallbacteria
+Candidatus Schekmanbacteria
+Candidatus Riflebacteria
+Candidatus Raymondbacteria
+Candidatus Margulisbacteria
+Candidatus Lindowbacteria
+Candidatus Handelsmanbacteria
+Candidatus Glassbacteria
+Candidatus Fraserbacteria
+Candidatus Fischerbacteria
+Candidatus Firestonebacteria
+Candidatus Eisenbacteria
+Candidatus Edwardsbacteria
+Candidatus Doudnabacteria
+Candidatus Delongbacteria
+Candidatus Coatesbacteria
+Candidatus Abawacabacteria
+Candidatus Tectomicrobia
+Candidatus Micrarchaeota
+Candidatus Woesearchaeota
+Candidatus Melainabacteria
+Candidatus Azambacteria
+Candidatus Kuenenbacteria
+Candidatus Jorgensenbacteria
+Candidatus Giovannonibacteria
+Candidatus Moranbacteria
+Candidatus Adlerbacteria
+Candidatus Wolfebacteria
+Candidatus Kaiserbacteria
+Candidatus Yanofskybacteria
+Candidatus Uhrbacteria
+Candidatus Magasanikbacteria
+Candidatus Amesbacteria
+Candidatus Nomurabacteria
+Candidatus Falkowbacteria
+Candidatus Campbellbacteria
+Candidatus Beckwithbacteria
+Candidatus Collierbacteria
+Candidatus Pacebacteria
+Candidatus Roizmanbacteria
+Candidatus Woesebacteria
+Candidatus Shapirobacteria
+Candidatus Gottesmanbacteria
+Candidatus Levybacteria
+Candidatus Daviesbacteria
+Candidatus Curtissbacteria
+Candidatus Dadabacteria
+Candidatus Rokubacteria
+Candidatus Fermentibacteria
+Candidatus Thorarchaeota
+candidate division KD3-62
+candidate division WOR-3
+Entorrhizomycota
+Candidatus Kapabacteria
+Candidatus Lokiarchaeota
+Candidatus Peregrinibacteria
+candidate division CPR3
+candidate division CPR2
+candidate division CPR1
+Candidatus Berkelbacteria
+Colponemidia
+Candidatus Nanohaloarchaeota
+Candidatus Parvarchaeota
+candidate phylum NAG2
+Candidatus Geoarchaeota
+candidate division GAL15
+Candidatus Fervidibacteria
+candidate division Zixibacteria
+Xenacoelomorpha
+Nitrospinae
+candidate division WPS-2
+candidate division WPS-1
+Ignavibacteriae
+candidate division JL-ETNP-Z39
+Candidatus Aerophobetes
+Candidatus Calescamantes
+Cryptomycota
+Candidatus Bathyarchaeota
+Chromerida
+Candidatus Diapherotrites
+Candidatus Aenigmarchaeota
+Thaumarchaeota
+candidate division NC10
+Aurearenophyceae
+Tenericutes
+Synergistetes
+Candidatus Cloacimonetes
+Blastocladiomycota
+candidate division WWE3
+Picozoa
+Candidatus Gracilibacteria
+Loricifera
+Candidatus Poribacteria
+Lentisphaerae
+Candidatus Parcubacteria
+Chlamydiae
+Spirochaetes
+Planctomycetes
+Actinobacteria
+Thermodesulfobacteria
+Chrysiogenetes
+Deferribacteres
+Thermotogae
+Chloroflexi
+Aquificae
+Nanoarchaeota
+Pinguiophyceae
+Candidatus Hydrogenedentes
+Gemmatimonadetes
+Kiritimatiellaeota
+Candidatus Saccharibacteria
+Bolidophyceae
+Verrucomicrobia
+Elusimicrobia
+Candidatus Latescibacteria
+Cycliophora
+Dictyoglomi
+Candidatus Microgenomates
+Armatimonadetes
+Candidatus Atribacteria
+Candidatus Aminicenantes
+Caldiserica
+Candidatus Omnitrophica
+Candidatus Acetothermia
+Gnathostomulida
+Fibrobacteres
+Candidatus Marinimicrobia
+Acidobacteria
+Candidatus Korarchaeota
+Kinorhyncha
+Entoprocta
+Tardigrada
+Nitrospirae
+Streptophyta
+Priapulida
+Gastrotricha
+Nematomorpha
+Orthonectida
+Fusobacteria
+Haplosporidia
+Euryarchaeota
+Crenarchaeota
+Onychophora
+Acanthocephala
+Chaetognatha
+Placozoa
+Hemichordata
+Rhombozoa
+Bryozoa
+Ctenophora
+Rotifera
+Chordata
+Echinodermata
+Brachiopoda
+Arthropoda
+Mollusca
+Annelida
+Nematoda
+Nemertea
+Platyhelminthes
+Cnidaria
+Porifera
+Microsporidia
+Apicomplexa
+Eustigmatophyceae
+Basidiomycota
+Ascomycota
+Chytridiomycota
+Chlorophyta
+Euglenida
+Phaeophyceae
+Bacillariophyta
+Xanthophyceae
+Deinococcus-Thermus
+Firmicutes
+Proteobacteria
+Cyanobacteria
+Chlorobi
+Bacteroidetes
