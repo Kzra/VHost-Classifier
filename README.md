@@ -1,5 +1,5 @@
 # VHost-Classifier
-For a list of taxon IDs, VHost-Classifier will filter out the viruses and then sort these viruses into groups based on their host lineage.
+For a list of taxonIDs, VHost-Classifier will filter out the viruses and then sort these viruses into groups based on their host lineage.
 The VHost-Classifier algorithm uses the Virus-Host DB , the NCBI Taxonomy DB and in-built predictive rules to achieve a high rate of virus host classification. VHost-Classifier will classify virus taxonIDs to family resolution. 
 
 **Usage:**
