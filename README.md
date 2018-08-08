@@ -10,7 +10,7 @@ python vhost_classifier.py [TaxonID.tsv] [VirusHostDB.tsv] [Output Dir] [-i] [-g
 ```[TaxonID.tsv]```: a .tsv list of taxonIDs to be classified (one taxon ID per row).
 
 ```[VHostDB.tsv]```: a copy of the Virus Host DB which can be downloaded [here](http://www.genome.jp/virushostdb/)</br>
- or by running :
+    or by running :
 ```wget ftp://ftp.genome.jp/pub/db/virushostdb/virushostdb.tsv```
 
 ```[Output Dir] ```: the name of the directory to output results to (must be unique). 
@@ -21,7 +21,7 @@ python vhost_classifier.py [TaxonID.tsv] [VirusHostDB.tsv] [Output Dir] [-i] [-g
 
 ```[-n]```: optional argument, supply file of scientific names alongside taxon ids (use if taxonid list returns an index error).  
 
-**Examples**:
+**Example**:
 
 ```shell
 python VHost-Classifier.py TaxonIDs.tsv VirusHostDB.tsv VHC_Run_1 -i 1 -g POF -n Sci_Names.csv
