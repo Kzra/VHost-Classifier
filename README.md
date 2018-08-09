@@ -5,6 +5,9 @@ The [VHost-Classifier algorithm][2] uses the Virus-Host DB , the NCBI Taxonomy D
 
 VHost-Classifier will sort viruses it could not assign a host to by the environment they were sequenced from. To do this it uses the IMG/VR database and inbuilt predictive rules. 
 
+ When [benchmarked][3] on 1000 randomly selected viral taxonids on NCBI, the software had an overall accuracy of >95%.
+
+
 **Usage:**
 
 Clone the directory and run program from within cloned directory.
@@ -44,8 +47,7 @@ VHost Classifier will [create directories][1] and in each directory write .csv f
 
 **Reading the .csv files**: the first column contains taxon IDs, the second column the index position (indexed from -i) of the taxon id in the input file. The final column contains the host name, predicted host name, or virus name (if host name can't be predicted). In each directory a counts.csv file is also written which contains the counts of how many taxon IDs are in each taxonomic class. 
 
-**Reference:**
-
+**Reference:**<br/>
 Virus-Host DB: Mihara, Tomoko, et al. "Linking virus genomes with host taxonomy." Viruses 8.3 (2016): 66.
 
 IMG/VR: Paez-Espino, David, et al. "IMG/VR: a database of cultured and uncultured DNA Viruses and retroviruses." Nucleic acids research (2016): gkw1030.
@@ -53,3 +55,4 @@ IMG/VR: Paez-Espino, David, et al. "IMG/VR: a database of cultured and unculture
 
 [1]:https://github.com/Kzra/VHost-Classifier/blob/master/Directory%20Navigation%20Example.pdf
 [2]:https://github.com/Kzra/VHost-Classifier/blob/master/Host%20Classification.pdf
+[3]:https://github.com/Kzra/VHost-Classifier/blob/master/benchmark.png
