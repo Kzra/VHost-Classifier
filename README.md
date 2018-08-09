@@ -1,8 +1,14 @@
 # VHost-Classifier
 For a list of taxonIDs, VHost-Classifier will filter out the viruses and then sort these viruses into groups based on their host lineage.
-The VHost-Classifier algorithm uses the Virus-Host DB , the NCBI Taxonomy DB and in-built predictive rules to achieve a high rate of virus host classification. VHost-Classifier will classify virus taxonIDs to family resolution. 
+
+The VHost-Classifier algorithm uses the Virus-Host DB , the NCBI Taxonomy DB and inbuilt predictive rules to achieve a high rate of virus host classification. VHost-Classifier will classify virus taxonIDs to family resolution. 
+
+VHost-Classifier will sort viruses it could not assign a host to by the environment they were sequenced from. To do this it uses the IMG/VR database and inbuilt predictive rules. 
 
 **Usage:**
+
+Clone the directory and run program from within cloned directory.
+
 ```shell
 python vhost_classifier.py [TaxonID.tsv] [VirusHostDB.tsv] [Output Dir] [-i] [-g] [-n]
 ```
@@ -39,8 +45,10 @@ VHost Classifier will [create directories][1] and in each directory write .csv f
 **Reading the .csv files**: the first column contains taxon IDs, the second column the index position (indexed from -i) of the taxon id in the input file. The final column contains the host name, predicted host name, or virus name (if host name can't be predicted). In each directory a counts.csv file is also written which contains the counts of how many taxon IDs are in each taxonomic class. 
 
 **Reference:**
-Virus Host DB:
-Mihara, Tomoko, et al. "Linking virus genomes with host taxonomy." Viruses 8.3 (2016): 66.
+
+Virus-Host DB: Mihara, Tomoko, et al. "Linking virus genomes with host taxonomy." Viruses 8.3 (2016): 66.
+
+IMG/VR: Paez-Espino, David, et al. "IMG/VR: a database of cultured and uncultured DNA Viruses and retroviruses." Nucleic acids research (2016): gkw1030.
 
 
 [1]:https://github.com/Kzra/VHost-Classifier/blob/master/Directory%20Navigation%20Example.pdf
