@@ -51,7 +51,7 @@ Virus-Host DB: Mihara, Tomoko, et al. "Linking virus genomes with host taxonomy.
 
 IMG/VR: Paez-Espino, David, et al. "IMG/VR: a database of cultured and uncultured DNA Viruses and retroviruses." Nucleic acids research (2016): gkw1030.
 
-If you use this software for publication please cite my github. 
+*If you use this software for publication please cite my github.*
 
 
 
