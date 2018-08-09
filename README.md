@@ -5,7 +5,7 @@ The [VHost-Classifier algorithm][2] uses the Virus-Host DB , the NCBI Taxonomy D
 
 VHost-Classifier will sort viruses it could not assign a host to by the environment they were sequenced from. To do this it uses the IMG/VR database and inbuilt predictive rules. 
 
- When [benchmarked][3] on 1000 randomly selected viral taxonids on NCBI, the software had an overall accuracy of >95%.
+ When [benchmarked][3] on 1000 randomly selected viral taxonids on NCBI, the software had an overall accuracy of >99%.
 
 
 **Usage:**
