@@ -7,7 +7,7 @@ VHost-Classifier will sort viruses it could not assign a host to by the environm
 
 When [benchmarked][3] on 1000 randomly selected viral taxonids on NCBI, the software had an overall accuracy of >99%.
 
-If you use this software, please cite my github. 
+If you use this software please cite my github. 
 
 **Usage:**
 
