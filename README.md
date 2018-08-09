@@ -34,9 +34,13 @@ Python 3 <br/>
 Note:  On first run through NCBI taxonomy database will be downloaded by ETE3.  
 
 **Output**:
-VHost Classifier will![create directories](https://github.com/Kzra/VHost-Classifier/blob/master/Dir%20navigation%20example.pdf) and in each directory write .csv files.<br/>
+VHost Classifier will [create directories][1] and in each directory write .csv files.<br/>
+
 **Reading the .csv files**: the first column contains taxon IDs, the second column the index position (indexed from -i) of the taxon id in the input file. The final column contains the host name, predicted host name, or virus name (if host name can't be predicted). In each directory a counts.csv file is also written which contains the counts of how many taxon IDs are in each taxonomic class. 
 
 **Reference:**
 Virus Host DB:
 Mihara, Tomoko, et al. "Linking virus genomes with host taxonomy." Viruses 8.3 (2016): 66.
+
+
+[1]:https://github.com/Kzra/VHost-Classifier/blob/master/Directory%20Navigation%20Example.pdf
