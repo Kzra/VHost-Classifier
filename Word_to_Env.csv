@@ -1,0 +1,9 @@
+sewage,Engineered,Wastewater,NA,NA
+lake,Environmental,Aquatic,Freshwater,NA
+marine,Environmental,Aquatic,Marine,NA
+soil,Environmental,Terrestrial,Soil,NA
+freshwater,Environmental,Aquatic,Freshwater,NA
+epbr,Engineered,Bioreactor,NA,NA
+plant,Host-Associated,Plant,NA,NA
+feces,Host-Associated,Animal,Digestive Tract,Feces
+fecal,Host-Associated,Animal,Digestive Tract,Feces

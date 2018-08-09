@@ -196,7 +196,102 @@ def host_locate(taxid,genera):
     ##include the IMGER database
                 
     return name2taxid     
-                     
+
+
+def env_groups (iecos,iecoc,iecot,iecost):
+    n = 0
+    e = 0
+    f = 0 
+    r = 0 
+    ecosys = ['']*1000
+    ecocat = ['']*1000
+    ecotyp = ['']*1000
+    ecosub = ['']*1000
+    ecos = iecos[1:len(iecos)]
+    ecoc = iecoc[1:len(iecoc)]
+    ecot = iecot[1:len(iecot)]
+    ecost = iecost[1:len(iecost)]
+
+
+
+    for item in ecos:
+        if item not in ecosys:
+                ecosys[n]=item
+                n = n + 1 
+    for item in ecoc:
+        if item not in ecocat:
+                ecocat[e]=item
+                e = e + 1 
+    for item in ecot:
+        if item not in ecotyp:
+                ecotyp[f]=item
+                f = f+ 1         
+    for item in ecost:
+        if item not in ecosub:
+                ecosub[r]=item
+                r = r+ 1     
+
+      
+    #get rid of empty elements
+    ecosys = list(filter(None, ecosys))
+    ecosys.append('NA')
+    ecocat = list(filter(None, ecocat))
+    ecocat.append('NA')
+    ecocat.append('Bioreactor')
+    ecotyp = list(filter(None, ecotyp))
+    ecotyp.append('NA')
+    ecosub = list(filter(None, ecosub))
+    ecosub.append('NA')
+    
+
+
+    e1 = {}
+    keys = range(len(ecosys))
+    values = ecosys
+    for i in keys:
+            e1[values[i]] = [i]
+    e2 = {}
+    keys = range(len(ecocat))
+    values = ecocat
+    for i in keys:
+            e2[values[i]] = [i]  
+    e3 = {}
+    keys = range(len(ecotyp))
+    values = ecotyp
+    for i in keys:
+            e3[values[i]] = [i]
+    e4 = {}
+    keys = range(len(ecosub))
+    values = ecosub
+    for i in keys:
+            e4[values[i]] = [i]
+    
+    
+    return e1,e2,e3,e4,ecosys,ecocat,ecotyp,ecosub
+
+
+def environ_locate(name):
+    name = name.lower()
+    words = name.split(" ")
+    ecoc = 'NA'
+    ecos = 'NA'
+    ecot = 'NA'
+    ecost = 'NA'
+    fd = False
+    for w in words:
+            if fd == True:
+                break
+            for nam,wa,wb,wc,wd in zip(dw,decoc,decos,decot,decost):
+                if nam == w:
+                    ecos = wa
+                    ecoc = wb
+                    ecot = wc
+                    ecost = wd
+                    fd = True
+                    break
+    return ecoc,ecos,ecot,ecost
+         
+                    
 #################################################################################
 ##MAIN SCRIPT
 ###################################################################################
@@ -260,6 +355,22 @@ for row in comsci:
     comname.append(row[0])
     sciname.append(row[1])
 
+##open word to env
+dw = []    
+decoc = []
+decos = []
+decot = []
+decost = []    
+wh = open('Word_to_Env.csv')
+woho =csv.reader(wh)
+for row in woho:
+    dw.append(row[0])    
+    decoc.append(row[1])
+    decos.append(row[2])
+    decot.append(row[3])
+    decost.append(row[4])
+
+
 ##create list of illegal influenza names
 infstrains = []
 with open('infstrains.txt') as ifs:
@@ -267,6 +378,27 @@ with open('infstrains.txt') as ifs:
     for row in infs:
         infstrains.append(row)
 
+
+##initialise imger database
+z1 = open('IMGER.csv', 'r')
+imger = csv.reader(z1)
+
+itaxonids = []
+incbiids = []
+ihost = []
+iecos = []
+iecoc = []
+iecot = []
+iecost = []
+
+    
+for rows in imger:
+    incbiids.append(rows[7])
+    ihost.append(rows[13])
+    iecos.append(rows[8])
+    iecoc.append(rows[9])
+    iecost.append(rows[10])
+    iecot.append(rows[11])
 
 f2 = open(args.vhost_db, 'r')
 c2 = csv.reader(f2,delimiter='\t')
@@ -639,7 +771,220 @@ for fname in os.listdir():
                 
         os.chdir('..')            
             
+###############################################################################################
+###BIN UNASSIGNED HOSTS
+###############################################################################################       
+print('Classifying unassigned viruses....')
+z2 = open('NAf.csv','r')
+sourceids = csv.reader(z2)
 
+os.chdir('..')
+#VSource-Classifier 
+#Take all the unassigned hits and run through IMG ER database to assign to environment. 
+#Create a dictionary function like for the vhost-db to define the groups
+
+
+os.makedirs('Host Unassigned')
+os.chdir('Host Unassigned')
+    
+    
+count = range(0,len(incbiids))    
+
+for results_row in sourceids: 
+    tids = results_row[0]
+    name = results_row[2]
+    found = False          
+    ##first use the imger database 
+    for c,incbi in zip(count,incbiids):
+        if tids == incbi:
+             found = True 
+             ecos = iecos[c]
+             ecoc = iecoc[c]
+             ecot = iecot[c]
+             ecost = iecost[c]
+             if not ecos:
+                ecos = 'NA'
+             if not ecoc:
+                ecoc = 'NA'
+             if not ecot:
+                ecot = 'NA' 
+             if not ecost:
+                ecost = 'NA'
+             break
+    ##if that doesn't work predict the environment           
+
+    if found == False:  
+        (ecoc,ecos,ecot,ecost) = environ_locate(name)         
+                
+                
+    if ecos == 'Host-associated':
+                                d8 = open(ecos+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ##BIN GROUP 1 
+                                os.makedirs('Host-associated',exist_ok=True)
+                                os.chdir('Host-associated')
+                                d8 = open(ecoc+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ####BIN GROUP 2 
+                                os.makedirs(ecoc,exist_ok=True)
+                                os.chdir(ecoc)
+                                d8 = open(ecot+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ####BIN GROUP 3
+                                os.makedirs(ecot,exist_ok=True)
+                                os.chdir(ecot)
+                                d8 = open(ecost+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                os.chdir('../../..')
+                                #break
+    if ecos == 'Environmental':
+                                d8 = open(ecos+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ##BIN GROUP 1 
+                                os.makedirs('Environmental',exist_ok=True)
+                                os.chdir('Environmental')
+                                d8 = open(ecoc+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ####BIN GROUP 2 
+                                os.makedirs(ecoc,exist_ok=True)
+                                os.chdir(ecoc)
+                                d8 = open(ecot+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ####BIN GROUP 3
+                                os.makedirs(ecot,exist_ok=True)
+                                os.chdir(ecot)
+                                d8 = open(ecost+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                os.chdir('../../..')
+                                #break
+             
+    if ecos == 'Engineered':   
+                                d8 = open(ecos+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ##BIN GROUP 1 
+                                os.makedirs('Engineered',exist_ok=True)
+                                os.chdir('Engineered')
+                                d8 = open(ecoc+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ####BIN GROUP 2 
+                                os.makedirs(ecoc,exist_ok=True)
+                                os.chdir(ecoc)
+                                d8 = open(ecot+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ####BIN GROUP 3
+                                os.makedirs(ecot,exist_ok=True)
+                                os.chdir(ecot)
+                                d8 = open(ecost+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                os.chdir('../../..')
+                                #break
+    if ecos == 'NA':   
+                                d8 = open(ecos+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ##BIN GROUP 1 
+                                os.makedirs('NA',exist_ok=True)
+                                os.chdir('NA')
+                                d8 = open(ecoc+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ####BIN GROUP 2 
+                                os.makedirs(ecoc,exist_ok=True)
+                                os.chdir(ecoc)
+                                d8 = open(ecot+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                d8.close()
+                                ####BIN GROUP 3
+                                os.makedirs(ecot,exist_ok=True)
+                                os.chdir(ecot)
+                                d8 = open(ecost+'.csv','a',newline='')
+                                pr = csv.writer(d8)
+                                pr.writerow(results_row)
+                                os.chdir('../../..')
+                                #break   
+         
+
+z1.close()
+z2.close()
+
+##################################################
+## BEGIN ENVIRONMENTAL COUNTS
+###################################################
+print('Counting environmental groups....')
+for g in ecosys:
+            try:  
+                d8 = open('COUNTS1.csv','a',newline='')
+                pr = csv.writer(d8)
+                num_lines = sum(1 for line in open(g+'.csv'))
+                i = [g]+ [str(num_lines)]
+                pr.writerow(i)
+                d8.close()
+                os.chdir(g)
+                for g2 in ecocat:
+                    try:
+                            d8 = open('COUNTS2.csv','a',newline='')
+                            pr = csv.writer(d8)
+                            num_lines = sum(1 for line in open(g2+'.csv'))
+                            i = [g2]+ [str(num_lines)]
+                            pr.writerow(i)
+                            d8.close()
+                            os.chdir(g2)
+                            for g3 in ecotyp:
+                                try:
+                                    d8 = open('COUNTS3.csv','a',newline='')
+                                    pr = csv.writer(d8)
+                                    num_lines = sum(1 for line in open(g3+'.csv'))
+                                    i = [g3]+ [str(num_lines)]
+                                    pr.writerow(i)
+                                    d8.close()
+                                    os.chdir(g3)
+                                    for g4 in ecosub:
+                                        try:
+                                            d8 = open('COUNTS4.csv','a',newline='')
+                                            pr = csv.writer(d8)
+                                            num_lines = sum(1 for line in open(g4+'.csv'))
+                                            i = [g4]+ [str(num_lines)]
+                                            pr.writerow(i)
+                                            d8.close()
+                                        except FileNotFoundError:
+                                            pass        
+                                    os.chdir('..')
+                                except FileNotFoundError:
+                                        pass        
+                            os.chdir('..')
+                    except FileNotFoundError:
+                        pass        
+                os.chdir('..')
+            except FileNotFoundError:
+                    pass
+                
+
+
+os.chdir('..')
 
 #Finally do the host-assigned/unassigned counts (ugly code)    
 
@@ -663,4 +1008,5 @@ d8.close()
           
 f1.close()
 f2.close()
+wh.close()
 
