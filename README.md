@@ -7,8 +7,6 @@ VHost-Classifier will sort viruses it could not assign a host to by the environm
 
 When [benchmarked][3] on 1000 randomly selected viral taxonids on NCBI, the software had an overall accuracy of >99%.
 
-If you use this software please cite my github. 
-
 **Usage:**
 
 Clone the directory and run from within cloned directory.
@@ -47,6 +45,8 @@ Note:  On first run through NCBI taxonomy database will be downloaded by ETE3.
 VHost Classifier will [create directories][1] and in each directory write .csv files.<br/>
 
 **Reading the .csv files**: the first column contains taxon IDs, the second column the index position (indexed from -i) of the taxon id in the input file. The final column contains the host name, predicted host name, or virus name (if host name can't be predicted). In each directory a counts.csv file is also written which contains the counts of how many taxon IDs are in each taxonomic class. 
+
+If you use this software for publication please cite my github. 
 
 **References:**<br/>
 Virus-Host DB: Mihara, Tomoko, et al. "Linking virus genomes with host taxonomy." Viruses 8.3 (2016): 66.
