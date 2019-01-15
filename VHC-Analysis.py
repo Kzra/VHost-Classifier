@@ -5,11 +5,15 @@ Created on Thu Jun 28 14:57:54 2018
 @author: Ezra
 """
 
+##This script should be run from within the 'Host Assigned' directory of the run you want to analyse. 
+#It will go through and write each 'Counts.csv' file to a single excel file available in the Host Assigned directory called 'Total_Counts'
+#Having all the counts in one place makes it easy to do comparisons and analysis of host composition.
+
 import os 
 import csv
 
-##One / write to column one, two // write to column two, three /// write to column three
 
+##One / write to column one, two // write to column two, three /// write to column
 
 #os.chdir('Run7_270618/Virus/Host Assigned')
 cwd = os.getcwd()
