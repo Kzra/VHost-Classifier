@@ -32,9 +32,9 @@ python vhost_classifier.py [TaxonID.tsv] [VirusHostDB.tsv] [Output Dir] [-i] [-g
 **Example**:
 
 ```shell
-python VHost_Classifier.py TaxonIDs.tsv VirusHostDB.tsv VHC_Run_1 -i 1 -g POF -n Sci_Names.csv
+python VHost_Classifier.py random_ids.csv VirusHostDB.tsv VHC_Run_1 -i 1 -g POF -n random_names.csv
 ``` 
-Virus host classify a list of taxonIDs in ```TaxonIDs.tsv```, use the VHost-DB file supplied by ```VirusHostDB.tsv``` and output the results to ```VHC_RUN_1```. Index the input taxonIDs from 1 in the output csv files. Classify taxonIDs to Phylum Order Family. Parse the ```Sci_Names.csv``` file. 
+Virus host classify a list of taxonIDs in ```random_ids.csv```, use the VHost-DB file supplied by ```VirusHostDB.tsv``` and output the results to ```VHC_RUN_1```. Index the input taxonIDs from 1 in the output csv files. Classify taxonIDs to Phylum Order Family. Parse the ```random_names.csv``` file. 
 
 **Dependencies:**<br/>
 Python 3 <br/>
