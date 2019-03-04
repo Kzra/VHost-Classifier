@@ -48,7 +48,8 @@ VHost Classifier will [create directories][1] and in each directory write .csv f
 
 **VHC-Analysis:** run this script from within the Host-Assigned directory of the run you want to analyse. The script will write walk the directory tree and write each Counts.csv file to a Total_Counts.csv file which will be saved in the Host-Assigned directory. This file makes it easier to compare the overall host diversity of viruses in your input.   
 
-*If you use this software for publication, please cite [this publication] (https://doi.org/10.1093/bioinformatics/btz151)*
+**Citation**: <br/>
+[Kitson,E. and Suttle,C.A. (2019) VHost-Classifier: Virus-Host Classification using natural language processing. Bioinformatics.](https://doi.org/10.1093/bioinformatics/btz151)
 
 **References:**<br/>
 Virus-Host DB: Mihara, Tomoko, et al. "Linking virus genomes with host taxonomy." Viruses 8.3 (2016): 66.
