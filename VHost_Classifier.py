@@ -158,13 +158,13 @@ def host_locate(taxid,genera):
                         except:
                             pass    
                         if lhost[c+1] == 'a':
-                            lhost[c] = 'aves'
+                            lhost[c] = 'homo'
 
                         elif lhost[c+1] == 'b' or lhost[c+1] == 'c':
-                            lhost[c] = 'mammalia'
+                            lhost[c] = 'homo'
 
                         else:
-                            lhost[c] = 'mammalia'
+                            lhost[c] = 'homo'
                         
                         #move the influenza to the first position - spiny eel influenza virus - pop deletes and returns element
                         lhost.insert(0,lhost.pop(c))
@@ -1009,4 +1009,3 @@ d8.close()
 f1.close()
 f2.close()
 wh.close()
-
