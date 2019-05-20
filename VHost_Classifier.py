@@ -157,6 +157,7 @@ def host_locate(taxid,genera):
                                         break
                         except:
                             pass    
+                        #unless specific host information can be discerned we assign influenza to humans as per WHO naming conventions.   
                         if lhost[c+1] == 'a':
                             lhost[c] = 'homo'
 
